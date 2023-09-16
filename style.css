@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+#nav{
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+.container{
+    margin-top: 10px;
+    padding: 10px;
+    width: 40vw;
+    background: linear-gradient(blue, red, brown);
+    border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .container{
+        margin-top: 10px;
+        padding: 10px;
+        width: 90vw;
+        background: linear-gradient(to right bottom, rgb(47, 47, 100), red, brown);
+        border-radius: 10px;
+    }
+    #nav{
+        font-family: 'Dancing Script', cursive;
+        font-size: 30px;
+    }
+
+}

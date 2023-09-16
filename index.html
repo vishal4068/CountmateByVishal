@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CountMate - The Calcy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var rs2000 = document.getElementById("rs2000");
+        rs2000.addEventListener(onchange,twoThousand);
+        function twoThousand(){
+            var rs2000 = document.getElementById("rs2000").value;
+            var rs2000total = document.getElementById("Total2000").value=2000*rs2000;
+        }
+
+        var rs500 = document.getElementById("rs500");
+        rs500.addEventListener(onchange,fiveHundred);
+        function fiveHundred(){
+            var rs500 = document.getElementById("rs500").value;
+            var rs500total = document.getElementById("Total500").value=500*rs500;
+        }
+
+        var rs200 = document.getElementById("rs200");
+        rs200.addEventListener(onchange,twoHundred);
+        function twoHundred(){
+            var rs200 = document.getElementById("rs200").value;
+            var rs200total = document.getElementById("Total200").value=200*rs200;
+        }
+
+        var rs100 = document.getElementById("rs100");
+        rs100.addEventListener(onchange,oneHundred);
+        function oneHundred(){
+            var rs100 = document.getElementById("rs100").value;
+            var rs100total = document.getElementById("Total100").value=100*rs100;
+        }
+
+        var rs50 = document.getElementById("rs50");
+        rs50.addEventListener(onchange,fifty);
+        function fifty(){
+            var rs50 = document.getElementById("rs50").value;
+            var rs50total = document.getElementById("Total50").value=50*rs50;
+        }
+
+        var rs20 = document.getElementById("rs20");
+        rs20.addEventListener(onchange,twenty);
+        function twenty(){
+            var rs20 = document.getElementById("rs20").value;
+            var rs20total = document.getElementById("Total20").value=20*rs20;
+        }
+
+        var rs10 = document.getElementById("rs10");
+        rs10.addEventListener(onchange,ten);
+        function ten(){
+            var rs10 = document.getElementById("rs10").value;
+            var rs10total = document.getElementById("Total10").value=10*rs10;
+        }
+
+        var rs5 = document.getElementById("rs5");
+        rs5.addEventListener(onchange,five);
+        function five(){
+            var rs5 = document.getElementById("rs5").value;
+            var rs5total = document.getElementById("Total5").value=5*rs5;
+        }
+
+        var rs2 = document.getElementById("rs2");
+        rs2.addEventListener(onchange,two);
+        function two(){
+            var rs2 = document.getElementById("rs2").value;
+            var rs2total = document.getElementById("Total2").value=2*rs2;
+        }
+
+        var rs1 = document.getElementById("rs1");
+        rs1.addEventListener(onchange,one);
+        function one(){
+            var rs1 = document.getElementById("rs1").value;
+            var rs1total = document.getElementById("Total1").value=1*rs1;
+        }
+
+        var add = document.getElementById("btn")
+        add.addEventListener(onclick, totaladd)
+        function totaladd(){
+            var rs2000 = document.getElementById("rs2000").value;
+            var rs2000total = document.getElementById("Total2000").value=2000*rs2000;
+            
+            var rs500 = document.getElementById("rs500").value;
+            var rs500total = document.getElementById("Total500").value=500*rs500;
+
+            var rs200 = document.getElementById("rs200").value;
+            var rs200total = document.getElementById("Total200").value=200*rs200;
+
+            var rs100 = document.getElementById("rs100").value;
+            var rs100total = document.getElementById("Total100").value=100*rs100;
+
+            var rs50 = document.getElementById("rs50").value;
+            var rs50total = document.getElementById("Total50").value=50*rs50;
+
+            var rs20 = document.getElementById("rs20").value;
+            var rs20total = document.getElementById("Total20").value=20*rs20;
+
+            var rs10 = document.getElementById("rs10").value;
+            var rs10total = document.getElementById("Total10").value=10*rs10;
+
+            var rs5 = document.getElementById("rs5").value;
+            var rs5total = document.getElementById("Total5").value=5*rs5;
+
+            var rs2 = document.getElementById("rs2").value;
+            var rs2total = document.getElementById("Total2").value=2*rs2;
+
+            var rs1 = document.getElementById("rs1").value;
+            var rs1total = document.getElementById("Total1").value=1*rs1;
+
+            var total = document.getElementById("totalCount").value=rs1total + rs2total + rs5total + rs10total + rs20total + rs50total + rs100total + rs200total + rs500total + rs2000total;
+            
+        }
+    </script>
+
+    <script>
+      
+      function convertNumberToWords() {
+        var inWords = document.getElementById("word")
+        var amount = document.getElementById("totalCount").value
+      console.log("getTotal")
+    var words = new Array();
+    words[0] = '';
+    words[1] = 'One';
+    words[2] = 'Two';
+    words[3] = 'Three';
+    words[4] = 'Four';
+    words[5] = 'Five';
+    words[6] = 'Six';
+    words[7] = 'Seven';
+    words[8] = 'Eight';
+    words[9] = 'Nine';
+    words[10] = 'Ten';
+    words[11] = 'Eleven';
+    words[12] = 'Twelve';
+    words[13] = 'Thirteen';
+    words[14] = 'Fourteen';
+    words[15] = 'Fifteen';
+    words[16] = 'Sixteen';
+    words[17] = 'Seventeen';
+    words[18] = 'Eighteen';
+    words[19] = 'Nineteen';
+    words[20] = 'Twenty';
+    words[30] = 'Thirty';
+    words[40] = 'Forty';
+    words[50] = 'Fifty';
+    words[60] = 'Sixty';
+    words[70] = 'Seventy';
+    words[80] = 'Eighty';
+    words[90] = 'Ninety';
+    amount = amount.toString();
+    var atemp = amount.split(".");
+    var number = atemp[0].split(",").join("");
+    var n_length = number.length;
+    var words_string = "";
+    if (n_length <= 9) {
+        var n_array = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0);
+        var received_n_array = new Array();
+        for (var i = 0; i < n_length; i++) {
+            received_n_array[i] = number.substr(i, 1);
+        }
+        for (var i = 9 - n_length, j = 0; i < 9; i++, j++) {
+            n_array[i] = received_n_array[j];
+        }
+        for (var i = 0, j = 1; i < 9; i++, j++) {
+            if (i == 0 || i == 2 || i == 4 || i == 7) {
+                if (n_array[i] == 1) {
+                    n_array[j] = 10 + parseInt(n_array[j]);
+                    n_array[i] = 0;
+                }
+            }
+        }
+        value = "";
+        for (var i = 0; i < 9; i++) {
+            if (i == 0 || i == 2 || i == 4 || i == 7) {
+                value = n_array[i] * 10;
+            } else {
+                value = n_array[i];
+            }
+            if (value != 0) {
+                words_string += words[value] + " ";
+            }
+            if ((i == 1 && value != 0) || (i == 0 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Crores ";
+            }
+            if ((i == 3 && value != 0) || (i == 2 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Lakhs ";
+            }
+            if ((i == 5 && value != 0) || (i == 4 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Thousand ";
+            }
+            if (i == 6 && value != 0 && (n_array[i + 1] != 0 && n_array[i + 2] != 0)) {
+                words_string += "Hundred and ";
+            } else if (i == 6 && value != 0) {
+                words_string += "Hundred ";
+            }
+        }
+        words_string = words_string.split("  ").join(" ");
+    }
+    inWords.innerText=words_string+"Only";
+}
+    </script>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1" id="nav">CountmateByVishal</span>
+        </div>
+    </nav>
+
+
+        <div class="container">
+            <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">2000</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs2000" onchange="twoThousand(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total2000" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0500</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs500" onchange="fiveHundred(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total500" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0200</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs200" onchange="twoHundred(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total200" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0100</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs100" onchange="oneHundred(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total100" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0050</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs50" onchange="fifty(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total50" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0020</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs20" onchange="twenty(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total20" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0010</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs10" onchange="ten(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total10" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0005</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs5" onchange="five(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total5" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0002</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs2" onchange="two(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total2" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">₹</span>
+                <span class="input-group-text">0001</span>
+                <span class="input-group-text ms-2">X</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="rs1" onchange="one(); totaladd(); convertNumberToWords()" style="text-align: center;">
+                <span class="input-group-text ms-2">=</span>
+                <input type="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="Total1" readonly style="font-weight: bold; text-align: center;">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="font-weight: bold; text-align: center;">Total</span>
+                <span class="input-group-text ms-1" style="font-weight: bold; text-align: center;">₹</span>
+                <input type="text" name="number" class="form-control ms-2" aria-label="Dollar amount (with dot and two decimal places)" id="totalCount" readonly style="font-weight: bold; text-align: center;" placeholder="Total Amount">
+              </div>
+
+              <div class="input-group mb-3" id="word" style="color: aliceblue; text-align: center; display: block; font-weight: bold; font-size: medium;"></div>
+
+        </div>
+        
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
